@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IRIS Model deployment</title>
+  
+  <!-- HTML -->
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <div class=main>
+    <div class="header">
+
+      <div class="logo">
+        IRIS
+      </div>
+      <div class="bars" id="bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div id="menu-items">
+        <div id="close-icon">
+          &times;
+        </div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          
+        </ul>
+      </div>
+    </div>
+    {% if result %}
+    <div id="message-div">
+      <div id="message">
+        <div class="titlebar">
+          <div class="title">
+            Result
+          </div>
+          <div id="close-message">
+            &times;
+          </div>
+        </div>
+        <div class="container">
+          <img src="/static/img/{{result}}.jpeg" alt="" />
+          <p>It is <span id="result">{{result}}</span></p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    
+    <form method="post">
+      <h1>IRIS Plant</h1>
+
+      <div class="input-div">
+        <label for="sepal-length">Sepal Length</label>
+        <input type="number" name="sepal-length" id="sepal-length" placeholder="4.3 (in cm)" required step="0.01" />
+      </div>
+
+      <div class="input-div">
+        <label for="sepal-width">Sepal Width</label>
+        <input type="number" name="sepal-width" id="sepal-width" placeholder="2.0 (in cm)" step="0.01" required />
+      </div>
+
+      <div class="input-div">
+        <label for="petal-length">Petal Length</label>
+        <input type="number" name="petal-length" id="sepal-length" placeholder="1.0 (in cm)" step="0.01" required />
+      </div>
+
+      <div class="input-div">
+        <label for="petal-width">Petal Width</label>
+        <input type="number" name="petal-width" id="petal-width" placeholder="0.1 (in cm)" step="0.01" required />
+      </div>
+
+      <button type="submit" class="block">Submit</button>
+    </form>
+
+  </div>
+  <script src="/static/js/main.js"></script>
+</body>
+
+</html>
